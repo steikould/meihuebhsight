@@ -1,0 +1,514 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-text-color: #333333;
+    --secondary-text-color: #555555;
+    --background-color: #ffffff; /* White background for content areas */
+    --page-background-color: #f4f4f4; /* Light gray for the overall page */
+    --accent-color: #8FBC8F; /* Soft Celadon Green */
+    --border-color: #dddddd;
+    --header-bg-color: #ffffff;
+    --footer-bg-color: #333333;
+    --footer-text-color: #f4f4f4;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--primary-text-color);
+    background-color: var(--page-background-color);
+    margin: 0;
+    /* Conceptual: Faint Hanji paper texture
+    background-image: url('path_to_hanji_texture_light.png');
+    background-repeat: repeat; */
+}
+
+img, picture, video, canvas, svg { /* From original, kept for media responsiveness */
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    width: 85%; /* Slightly narrower for more white space on sides */
+    max-width: 1200px; /* Increased max-width for a more spacious feel */
+    margin: 0 auto;
+    padding: 30px 20px; /* More vertical padding */
+}
+
+header {
+    background-color: var(--header-bg-color); /* White */
+    padding: 1em 0;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky; /* Sticky header */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px; /* Adjust padding within header container */
+    padding-bottom: 15px;
+}
+
+#branding h1 {
+    margin: 0; /* Remove default margin from h1 */
+    font-size: 1.8em; /* Adjust size */
+}
+
+#branding h1 a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+    font-weight: 700; /* Bolder */
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Align items horizontally */
+}
+
+header nav ul li {
+    margin-left: 25px; /* Spacing between nav items */
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--secondary-text-color); /* Slightly lighter than main text */
+    font-weight: 500; /* Medium weight */
+    font-size: 0.95em;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent; /* For hover effect, creates space for border appearance on hover */
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active { /* For current page indication later */
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+
+main {
+    padding-top: 20px; /* Space below sticky header */
+}
+
+section {
+    background-color: var(--background-color); /* White background for content sections */
+    margin-bottom: 30px; /* Space between sections */
+    padding: 40px 0; /* Vertical padding within sections, container handles horizontal */
+    border-radius: 8px; /* Subtle rounded corners for a softer look */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03); /* Very subtle shadow for sections */
+    /* Conceptual: If sections have a slightly different texture or a very subtle border image
+    border: 1px solid var(--border-color); // Or...
+    border-image-source: url('path_to_subtle_korean_pattern_border.svg');
+    border-image-slice: 4; // Define how the border image is sliced
+    border-image-repeat: round; // Or 'stretch'
+    */
+}
+
+/* Apply container padding to sections that directly hold content, not to the section tag itself if container is inside */
+section .container {
+    padding-top: 0; /* Remove redundant padding if section already has padding */
+    padding-bottom: 0;
+}
+section:first-child .container{ /* For hero that might have its own padding rules */
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+
+section:last-child {
+    margin-bottom: 0;
+}
+
+section h2 { /* Section titles */
+    font-size: 2.2em;
+    color: var(--primary-text-color);
+    margin-bottom: 1em;
+    padding-bottom: 0.6em; /* Slightly more space for the border */
+    border-bottom: 2px solid var(--accent-color); /* Thinner, more elegant line */
+    display: inline-block;
+    position: relative; /* For potential pseudo-elements */
+}
+
+/* Optional: Small decorative element at the end of the title border */
+/* section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; // Adjust to align with the border
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color); // Or a different shade
+    border-radius: 50%; // Simple dot, could be a more complex SVG shape
+    // Or use a unicode character like a small flower: content: '\273F'; font-size: 1.5em;
+} */
+
+#hero {
+    background-color: var(--page-background-color); /* Match page background or a subtle variant */
+    text-align: center;
+    padding: 60px 20px; /* More padding for hero */
+    border-radius: 0; /* Full width feel */
+    box-shadow: none; /* No shadow for hero if it's not 'boxed' */
+    margin-bottom: 30px; /* Keep consistent spacing */
+}
+
+#hero .container { /* Ensure hero's container also has adjusted padding if needed */
+    padding:0; /* Hero section itself has padding, container is for width/centering */
+}
+
+
+#hero h2 {
+    font-size: 2.8em; /* Larger for hero headline */
+    color: var(--primary-text-color);
+    margin-bottom: 0.5em;
+    border-bottom: none; /* No border for hero title */
+}
+
+#hero p {
+    font-size: 1.2em;
+    color: var(--secondary-text-color);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.job {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color); /* Separator for jobs */
+}
+
+.job:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.job h3 {
+    font-size: 1.5em;
+    color: var(--primary-text-color);
+    margin-bottom: 0.15em; /* Slightly reduce space below job title */
+}
+
+.job .company-details {
+    font-size: 0.95em;
+    color: var(--secondary-text-color);
+    margin-bottom: 0.5em; /* Slightly reduce space below company details */
+    font-style: italic;
+}
+
+.job ul {
+    list-style: disc; /* Standard bullets */
+    margin-left: 20px; /* Indent bullets */
+    padding-left: 0; /* Ensure no extra padding if browser adds it */
+    margin-top: 0.5em; /* Ensure some space above bullet list if preceded by text directly */
+    margin-bottom: 1em; /* Space after list */
+}
+
+.job ul li {
+    margin-bottom: 0.6em; /* Adjust spacing between bullet points */
+    line-height: 1.55; /* Slightly more line height for readability */
+}
+
+.education-item {
+    margin-bottom: 20px; /* Consistent spacing for education items */
+}
+.education-item h3 {
+    font-size: 1.3em;
+    margin-bottom: 0.1em;
+    color: var(--primary-text-color);
+}
+.education-item .degree {
+    font-weight: bold;
+    color: var(--primary-text-color);
+    margin-bottom: 0.25em;
+}
+.education-item .duration {
+    margin-bottom: 0.25em;
+}
+.education-item .duration, .education-item .activities {
+    font-size: 0.9em;
+    color: var(--secondary-text-color);
+}
+
+.licenses-list {
+    list-style: none;
+    padding-left: 0;
+}
+.licenses-list li {
+    padding-left: 1.5em;
+    position: relative;
+    margin-bottom: 10px; /* Spacing for license items */
+}
+.licenses-list li:before {
+    content: '❖'; /* Changed to a different, elegant unicode character (e.g., a stylized flower/diamond) */
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-size: 1.1em; /* Adjust size */
+    line-height: 1.4; /* Align with text */
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    column-count: 2; /* Display skills in two columns on wider screens */
+    column-gap: 30px;
+}
+
+.skills-list li {
+    margin-bottom: 0.75em;
+    font-size: 0.95em;
+    padding: 8px 12px; /* Adjusted padding for skill tags */
+    background-color: var(--page-background-color); /* Light bg for skill tags */
+    border-left: 4px solid var(--accent-color); /* Accent border - slightly thicker */
+    border-radius: 4px;
+    break-inside: avoid-column; /* Prevents list items from breaking across columns - useful for multi-column layouts */
+}
+
+/* Fallback for browsers that don't support column-count */
+@media (max-width: 768px) {
+    .skills-list {
+        column-count: 1;
+    }
+}
+
+footer {
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    text-align: center;
+    padding: 2em 0;
+    margin-top: 40px; /* More space before footer */
+}
+footer .container {
+     padding-top: 20px;
+     padding-bottom: 20px;
+}
+footer p {
+    font-size: 0.9em;
+    color: var(--footer-text-color);
+    margin-bottom: 0; /* Remove bottom margin if it's the only element */
+}
+/* Add a class for the conceptual Maedeup knot if it were text/icon font */
+/* .footer-knot-icon {
+    font-size: 1.5em;
+    color: var(--accent-color); // Or a subtle grey
+    display: block;
+    margin-top: 10px;
+} */
+
+hr.styled-divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--accent-color), rgba(0, 0, 0, 0));
+    margin: 40px 0; /* More spacing around divider */
+}
+
+/* Conceptual: If we could use SVG for a Maedeup knot or plum blossom branch motif */
+/*
+hr.maedeup-divider {
+    border: 0;
+    height: 20px; // Height of the SVG
+    background: url('path_to_maedeup_motif.svg') center center no-repeat;
+    background-size: contain; // Or a specific size
+    margin: 40px auto;
+    width: 50%; // Or a fixed width
+}
+*/
+
+/* General anchor styling from previous version, ensure it's still sensible */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Headings from previous, ensure they are sensible with new structure */
+
+/* Conceptual styling for a floated image in the About section */
+/*
+#about .container .about-image-placeholder {
+    float: right;
+    width: 30%; // Example size
+    max-width: 250px; // Max size
+    margin-left: 25px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color); // Placeholder border
+    padding: 5px;
+    border-radius: 4px;
+    // background-color: #f0f0f0; // Placeholder background
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // text-align: center;
+    // font-size: 0.9em;
+    // color: #777;
+}
+#about .container p {
+    // Add overflow: hidden; or other clear-fixing if float issues arise,
+    // or use modern layout like flexbox/grid for the whole section.
+    // For simplicity, assuming text will wrap naturally.
+}
+*/
+h1, h2, h3, h4, h5, h6 { /* Base heading styles */
+    font-weight: 600;
+    color: var(--primary-text-color);
+}
+/* Specific heading sizes already handled in their respective sections or globally (e.g. section h2) */
+h1 { font-size: 2.5em; } /* Base, can be overridden by #branding h1 */
+/* h2 is handled by section h2 and #hero h2 */
+/* h3 is handled by .job h3 and .education-item h3 */
+h4 { font-size: 1.5em; } /* General h4 if used */
+
+p { /* Base paragraph from previous */
+    margin-bottom: 1em;
+}
+
+/* Styling for the Activity/Posts Section */
+#activity .post {
+    background-color: #fdfdfd; /* Slightly off-white for posts, if section bg is white, or keep same */
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+#activity .post:last-of-type {
+    margin-bottom: 0;
+}
+
+#activity .post-header {
+    margin-bottom: 10px;
+}
+
+#activity .post-meta {
+    font-size: 0.85em;
+    color: var(--secondary-text-color);
+    margin-bottom: 5px;
+}
+
+#activity .post-header h4 { /* If post titles are used */
+    font-size: 1.2em;
+    color: var(--primary-text-color);
+    margin-bottom: 5px;
+}
+
+#activity .post-content p {
+    margin-bottom: 1em;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+#activity .post-content .post-image { /* Placeholder styling for images */
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+}
+
+#activity .post-content .quoted-text {
+    border-left: 3px solid var(--accent-color);
+    padding-left: 15px;
+    margin-left: 0; /* Or a small margin if preferred */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-style: italic;
+    color: var(--secondary-text-color);
+}
+
+#activity .post-content .quoted-text p {
+    font-size: 0.9em; /* Slightly smaller for quoted text */
+    margin-bottom: 0.5em;
+}
+
+#activity .post-engagement {
+    font-size: 0.85em;
+    color: var(--secondary-text-color);
+    margin-top: 15px;
+}
+
+/* A more subtle divider for use between posts, if needed */
+hr.styled-divider-subtle {
+    border: 0;
+    height: 1px;
+    background-color: var(--border-color); /* Lighter than main styled-divider */
+    margin: 30px 0;
+}
+
+/* Conceptual button style for "Show all posts" */
+/*
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #7aa87a; // Darken accent color
+    color: #fff;
+    text-decoration: none;
+}
+*/
+
+/* General Responsive Considerations:
+   - The fluid container (.container) and max-width properties provide a basic level of responsiveness.
+   - Navigation might need a separate mobile-friendly implementation (e.g., hamburger menu) for very small screens if it were more complex.
+   - Multi-column layouts like .skills-list naturally reflow, but are also explicitly set to 1 column in a media query for better control.
+*/
+
+/* Explicit media query for skills list already present, adding more for header and typography */
+@media (max-width: 768px) {
+    /* .skills-list column-count: 1; is already defined above */
+
+    #branding h1 {
+        font-size: 1.5em; /* Adjust branding size for smaller screens */
+    }
+
+    header nav ul li {
+        margin-left: 15px; /* Reduce nav spacing */
+    }
+    header nav ul li a {
+        font-size: 0.9em;
+    }
+}
+@media (max-width: 500px) {
+     header .container {
+        flex-direction: column; /* Stack branding and nav */
+        align-items: flex-start;
+    }
+    header nav ul {
+        margin-top: 10px; /* Space between stacked branding and nav */
+        width: 100%;
+        justify-content: space-around; /* Distribute links if stacked */
+    }
+     header nav ul li {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    section h2 {
+        font-size: 1.8em; /* Smaller section titles */
+    }
+    #hero h2 {
+        font-size: 2.2em; /* Smaller hero title */
+    }
+}
