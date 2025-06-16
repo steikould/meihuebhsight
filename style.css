@@ -490,6 +490,127 @@ textarea:focus {
     box-shadow: 0 0 3px var(--color-accent); /* Simpler focus shadow */
 }
 
+/* Styling for Project Listing Page - projects.html */
+
+#projects-content h2 { /* "My Projects" title */
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.project-list-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: var(--space-xl); /* Gap between cards */
+    padding: var(--space-md) 0; /* Padding around the grid */
+}
+
+.project-summary-card {
+    display: flex; /* Use flexbox for internal layout of card */
+    flex-direction: column; /* Stack icon, content, cta vertically */
+    background-color: var(--color-bg); /* Or #FFFFFF for a whiter card */
+    border: 1px solid var(--color-border);
+    border-radius: 8px; /* Consistent rounded corners */
+    padding: var(--space-lg);
+    text-decoration: none; /* Remove underline from link */
+    color: var(--color-text-primary); /* Ensure text color is primary by default */
+    transition: transform var(--transition-speed) var(--transition-timing),
+                box-shadow var(--transition-speed) var(--transition-timing);
+    height: 100%; /* Make cards in a row equal height if wrapper uses grid */
+}
+
+.project-summary-card:hover {
+    transform: translateY(-5px); /* Subtle lift effect */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.08); /* Slightly more pronounced shadow */
+    color: var(--color-text-primary); /* Keep text color on hover unless specified */
+}
+
+.project-summary-card .card-icon {
+    font-size: 2.5rem; /* Size of the icon placeholder */
+    color: var(--color-accent); /* Accent color for icon */
+    margin-bottom: var(--space-md);
+    text-align: left; /* Or center if preferred */
+    /* Basic placeholder styling for the span if no actual icons are used */
+}
+
+/* Placeholder styles for different icons - can be expanded with actual icons/SVG later */
+.icon-placeholder {
+    display: inline-block;
+    width: 40px; /* Example size */
+    height: 40px; /* Example size */
+    line-height: 40px;
+    text-align: center;
+    border: 2px solid var(--color-accent);
+    border-radius: 50%; /* Circle icon */
+}
+.icon-traffic-management::before { content: '🚦'; } /* Example emoji */
+.icon-coastal-resilience::before { content: '🌊'; }
+.icon-rail-transport::before { content: '🚆'; }
+.icon-water-treatment::before { content: '💧'; }
+
+
+.project-summary-card .card-content {
+    flex-grow: 1; /* Allows content to take up space, pushing CTA down */
+}
+
+.project-summary-card .card-title { /* h3 inside card */
+    font-size: 1.5rem; /* Consistent with project section h4 */
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.project-summary-card .card-summary {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md); /* Space before CTA */
+}
+
+.project-summary-card .card-cta {
+    margin-top: auto; /* Pushes CTA to the bottom if card content is short */
+    padding-top: var(--space-sm); /* Space above CTA text */
+    text-align: right; /* Align CTA to the right */
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-accent);
+}
+
+.project-summary-card:hover .card-cta {
+    text-decoration: underline; /* Underline CTA on card hover */
+}
+
+/* Project Detail Page Specifics */
+.project-detail-page {
+    background-color: transparent; /* No card-like background for the whole page content */
+    border: none; /* No border for the whole page content */
+    box-shadow: none; /* No shadow for the whole page content */
+    padding: 0; /* Container will handle padding, or section padding */
+}
+
+.project-detail-page .project-name { /* Main title of the project on its own page */
+    font-size: 2.5rem; /* Larger, like a section h2 */
+    text-align: center; /* Center the main project title */
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.project-detail-page .project-section h3 { /* Sub-section titles like "Executive Summary" */
+    font-size: 1.75rem; /* Larger than on a card, like a typical h3 */
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--color-accent);
+    display: inline-block;
+}
+
+/* Ensure .project-section styles are appropriate for the detail page too */
+.project-detail-page .project-section {
+    margin-bottom: var(--space-xl); /* More space between sections on detail page */
+    padding-bottom: var(--space-xl);
+}
+
 /* Styling for Projects Page - projects.html */
 #projects-content .project-entry {
     background-color: var(--color-bg); /* Or a slightly whiter like #FFFFFF if --color-bg is very creamy */
@@ -593,14 +714,22 @@ textarea:focus {
         --font-size-base: 16px; /* Slightly smaller base for mobile */
     }
     /* Styles from the project-specific media query are merged here */
-    .project-name {
+    .project-name { /* Detail page project name */
         font-size: 1.75rem;
     }
-    .project-section h4 {
+    .project-section h4 { /* Detail page section titles */
         font-size: 1.3rem;
     }
-    #projects-content .project-entry {
+    #projects-content .project-entry { /* Detail page content area */
         padding: var(--space-lg);
+    }
+    /* Project listing page specific responsive adjustments */
+    .project-list-wrapper {
+        grid-template-columns: 1fr; /* Single column on smaller tablets/mobile */
+        gap: var(--space-lg);
+    }
+    .project-summary-card .card-title { /* Card titles on listing page */
+        font-size: 1.3rem;
     }
     #hero h2 {
         font-size: 2.5rem;
