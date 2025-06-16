@@ -146,31 +146,30 @@ nav ul li a.active { /* For current page indication */
 
 /* Main Content and Sections */
 main {
-    padding-top: var(--space-xl); /* Space below sticky header if header had fixed height/bg */
-                               /* May not be needed if header is transparent and content flows under */
+    padding-top: var(--space-xl);
 }
 
 section {
-    padding: var(--space-xxxl) 0; /* Generous padding for sections */
+    padding: var(--space-xxxl) 0;
 }
 
-section:nth-child(even) { /* Example: alternate section background if desired */
-    /* background-color: #F7F5F2; */ /* Slightly different off-white */
+section:nth-child(even) {
+    /* background-color: #F7F5F2; */
 }
 
-section h2 { /* Section Titles */
-    font-size: 2.5rem; /* Corresponds to --font-size-h2 or similar */
+section h2 {
+    font-size: 2.5rem;
     font-weight: 500;
     color: var(--color-text-primary);
     margin-bottom: var(--space-xl);
-    text-align: center; /* Centered section titles */
+    text-align: center;
 }
 
 /* Footer */
 footer {
     padding: var(--space-xxl) 0;
     text-align: center;
-    border-top: 1px solid var(--color-border); /* Subtle border for footer */
+    border-top: 1px solid var(--color-border);
     margin-top: var(--space-xxxl);
 }
 
@@ -184,22 +183,22 @@ footer p {
 /* Hero Section */
 #hero {
     text-align: center;
-    padding: var(--space-xxxl) var(--space-lg) var(--space-xxl) var(--space-lg); /* Adjusted padding */
-    background-color: transparent; /* Hero might not need a different background */
+    padding: var(--space-xxxl) var(--space-lg) var(--space-xxl) var(--space-lg);
+    background-color: transparent;
 }
 
-#hero h2 { /* Main headline in Hero */
-    font-size: 3rem; /* Example size, adjust as per hierarchy */
+#hero h2 {
+    font-size: 3rem;
     font-weight: 500;
     line-height: 1.2;
     margin-bottom: var(--space-lg);
     color: var(--color-text-primary);
 }
 
-#hero p { /* Sub-headline */
+#hero p {
     font-size: 1.25rem;
     color: var(--color-text-secondary);
-    max-width: 750px; /* Max width for readability */
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: var(--space-xl);
@@ -207,77 +206,63 @@ footer p {
 
 /* About Section */
 #about .container {
-    max-width: 800px; /* More focused text column for readability */
-    /* text-align: left; */ /* Default, so not strictly needed to override */
+    max-width: 800px;
 }
 
 #about p {
-    font-size: 1.1rem; /* Slightly larger for emphasis if desired */
-    line-height: 1.7; /* Ensure this is applied */
+    font-size: 1.1rem;
+    line-height: 1.7;
     color: var(--color-text-primary);
     margin-bottom: var(--space-lg);
 }
-/* Conceptual: Add subtle border-radius to images if any are ever added here */
-/* #about img { border-radius: 4px; animation: fadeIn 0.5s ease-in-out; } */
 
-/* Experience Section */
+/* Experience Section - Old .job styles (potentially for removal later) */
 .job {
     margin-bottom: var(--space-xl);
     padding-bottom: var(--space-xl);
     border-bottom: 1px solid var(--color-border);
 }
-
 .job:last-child {
     border-bottom: none;
     margin-bottom: 0;
     padding-bottom: 0;
 }
-
-.job h3 { /* Job Title */
-    font-size: 1.75rem; /* --font-size-h3 or similar */
+.job h3 {
+    font-size: 1.75rem;
     font-weight: 500;
     margin-bottom: var(--space-xs);
     color: var(--color-text-primary);
 }
-
-.job .company-details { /* Company, Dates, Location */
+.job .company-details {
     font-size: 1rem;
     color: var(--color-text-secondary);
     margin-bottom: var(--space-md);
 }
-
 .job ul {
     list-style-position: outside;
-    padding-left: var(--space-lg); /* Indent list */
+    padding-left: var(--space-lg);
 }
-
 .job ul li {
     margin-bottom: var(--space-sm);
-    line-height: 1.6; /* Ensure good line height for list items */
+    line-height: 1.6;
 }
 
 /* Education Section */
 .education-item {
     margin-bottom: var(--space-lg);
 }
-
-.education-item:last-child {
-    margin-bottom: 0;
-}
-
-.education-item h3 { /* Institution Name */
-    font-size: 1.5rem; /* --font-size-h4 or similar */
+.education-item:last-child { margin-bottom: 0; }
+.education-item h3 {
+    font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: var(--space-xxs);
 }
-
-.education-item .degree { /* Degree and Field */
+.education-item .degree {
     font-size: 1.1rem;
-    color: var(--color-text-primary); /* Slightly more prominent */
+    color: var(--color-text-primary);
     font-weight: 500;
     margin-bottom: var(--space-xs);
 }
-
 .education-item .duration,
 .education-item .activities {
     font-size: 0.95rem;
@@ -287,96 +272,84 @@ footer p {
 
 /* Licenses & Certifications Section */
 .licenses-list {
-    list-style: none; /* Remove default bullets */
+    list-style: none;
     padding-left: 0;
 }
-
 .licenses-list li {
     font-size: 1.05rem;
     margin-bottom: var(--space-md);
-    padding-left: var(--space-lg); /* Space for custom marker */
+    padding-left: var(--space-lg);
     position: relative;
 }
-
 .licenses-list li::before {
-    content: '✧'; /* Example Unicode character: star or other motif */
+    content: '✧';
     position: absolute;
     left: 0;
-    top: 2px; /* Adjust vertical alignment */
+    top: 2px;
     color: var(--color-accent);
-    font-size: 1rem; /* Size of the marker */
+    font-size: 1rem;
 }
 
 /* Skills Section */
 .skills-list {
     list-style: none;
     padding: 0;
-    display: flex; /* Using flexbox for wrapping tags */
+    display: flex;
     flex-wrap: wrap;
-    gap: var(--space-md); /* Gap between skill tags */
-    justify-content: center; /* Center tags if they don't fill width */
+    gap: var(--space-md);
+    justify-content: center;
 }
-
 .skills-list li {
     background-color: transparent;
     color: var(--color-text-secondary);
     padding: var(--space-sm) var(--space-md);
     border: 1px solid var(--color-border);
-    border-radius: 20px; /* Pill shape */
+    border-radius: 20px;
     font-size: 0.95rem;
     font-weight: 500;
 }
-
 .skills-list li:hover {
     background-color: var(--color-accent);
-    color: var(--color-bg); /* Or a light text color if accent is dark */
+    color: var(--color-bg);
     border-color: var(--color-accent);
 }
 
-
 /* Activity Section (Posts) */
-#activity h2 { /* "Recent Activity & Posts" */
-    text-align: center; /* Keep centered as per default section h2 */
-    margin-bottom: var(--space-xl); /* Ensure adequate space before posts */
+#activity h2 {
+    text-align: center;
+    margin-bottom: var(--space-xl);
 }
 #activity .post {
-    background-color: transparent; /* No heavy card background */
-    padding: var(--space-md) 0; /* Vertical padding, no horizontal as container handles it */
+    background-color: transparent;
+    padding: var(--space-md) 0;
     margin-bottom: var(--space-lg);
-    border-bottom: 1px solid var(--color-border); /* Subtle separator */
-    /* Remove box-shadow and excessive padding from previous .post style */
+    border-bottom: 1px solid var(--color-border);
 }
-
 #activity .post:last-of-type {
-    border-bottom: none; /* Corrected from previous attempt where this might have been missed */
+    border-bottom: none;
     margin-bottom: 0;
 }
-
 #activity .post-meta {
     font-size: 0.9rem;
     color: var(--color-text-secondary);
     margin-bottom: var(--space-sm);
 }
-
 #activity .post-content p {
-    font-size: 1rem; /* Standard body text size */
+    font-size: 1rem;
     line-height: 1.7;
     color: var(--color-text-primary);
     margin-bottom: var(--space-sm);
 }
-
 #activity .post-content .quoted-text {
     border-left: 3px solid var(--color-accent);
     padding-left: var(--space-md);
     margin: var(--space-md) 0;
-    font-style: normal; /* Remove italic if not desired for new theme */
-    color: var(--color-text-secondary); /* Keep secondary for quotes */
+    font-style: normal;
+    color: var(--color-text-secondary);
 }
-
 #activity .post-content .quoted-text p {
-    font-size: 0.95rem; /* Slightly smaller for quotes */
+    font-size: 0.95rem;
 }
-
 #activity .post-engagement {
     font-size: 0.9rem;
     color: var(--color-text-secondary);
@@ -384,51 +357,44 @@ footer p {
 }
 
 /* Contact Section */
-#contact {
-    text-align: center;
-}
-
+#contact { text-align: center; }
 #contact p {
     font-size: 1.1rem;
     margin-bottom: var(--space-md);
     color: var(--color-text-primary);
 }
-
 #contact a {
-    color: var(--color-accent); /* Starts with accent color */
+    color: var(--color-accent);
     text-decoration: none;
     font-weight: 500;
     border-bottom: 1px solid transparent;
 }
-
 #contact a:hover {
-    border-bottom-color: var(--color-accent); /* Underline hover for already accent link */
-    color: var(--color-accent); /* Keep accent color, or slightly darken/lighten if desired */
+    border-bottom-color: var(--color-accent);
+    color: var(--color-accent);
 }
 
-/* Utility and Theming Classes (e.g., for dividers) */
+/* Utility and Theming Classes */
 hr.styled-divider {
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, transparent, var(--color-border), transparent);
     margin: var(--space-xxl) 0;
 }
-
-hr.styled-divider-subtle { /* For use within sections, like between posts if not using border-bottom */
+hr.styled-divider-subtle {
     border: 0;
     height: 1px;
-    background-color: var(--color-border); /* Lighter than main styled-divider */
-    margin: var(--space-lg) 0; /* Adjust spacing if kept */
+    background-color: var(--color-border);
+    margin: var(--space-lg) 0;
 }
 
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
-
 .fade-in-image {
     animation: fadeIn 0.5s ease-in-out;
-    border-radius: 4px; /* Apply default border-radius here */
+    border-radius: 4px;
 }
 
 /* Conceptual Minimal Button Styling */
@@ -436,30 +402,25 @@ hr.styled-divider-subtle { /* For use within sections, like between posts if not
     display: inline-block;
     padding: var(--space-sm) var(--space-lg);
     font-family: var(--font-family-sans);
-    font-size: 0.95rem; /* Or var(--font-size-base) */
+    font-size: 0.95rem;
     font-weight: 500;
     text-align: center;
     cursor: pointer;
-    border: 1px solid transparent; /* Default no border */
-    border-radius: 4px; /* Subtle border-radius as per image spec */
-    color: var(--color-text-secondary); /* Default text color for minimal button */
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: var(--color-text-secondary);
     background-color: transparent;
-    /* transition is already global */
 }
-
 .btn:hover {
     color: var(--color-accent);
-    /* border-color: var(--color-accent); */ /* Optional border on hover */
 }
-
-.btn-primary { /* Example of a primary button */
-    color: var(--color-bg); /* Text color for primary button */
-    background-color: var(--color-accent); /* Accent background */
+.btn-primary {
+    color: var(--color-bg);
+    background-color: var(--color-accent);
     border-color: var(--color-accent);
 }
-
 .btn-primary:hover {
-    background-color: #A06B51; /* Slightly darker accent - adjust as needed */
+    background-color: #A06B51;
     border-color: #A06B51;
     color: var(--color-bg);
 }
@@ -473,41 +434,39 @@ textarea {
     font-size: 1rem;
     padding: var(--space-sm) var(--space-md);
     border: 1px solid var(--color-border);
-    border-radius: 4px; /* Subtle border-radius */
-    background-color: var(--color-bg); /* Or a slightly lighter variant like #fff */
+    border-radius: 4px;
+    background-color: var(--color-bg);
     color: var(--color-text-primary);
-    width: 100%; /* Default to full width within container */
+    width: 100%;
     margin-bottom: var(--space-md);
-    /* transition is already global */
 }
-
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="tel"]:focus,
 textarea:focus {
     outline: none;
     border-color: var(--color-accent);
-    box-shadow: 0 0 3px var(--color-accent); /* Simpler focus shadow */
+    box-shadow: 0 0 3px var(--color-accent);
 }
 
-/* Experience Timeline Styles */
-#experience-content h2 { /* "My Experience" title */
+/* OLD Vertical Experience Timeline Styles - Commented Out */
+/*
+#experience-content h2 {
     text-align: center;
     margin-bottom: var(--space-xl);
 }
 
 .experience-timeline {
     position: relative;
-    max-width: 900px; /* Max width for the timeline itself */
+    max-width: 900px;
     margin: 0 auto;
     padding: var(--space-lg) 0;
 }
 
-/* The actual timeline line */
 .experience-timeline::before {
     content: '';
     position: absolute;
-    left: 19px; /* Position to align with the center of markers (40px width / 2 - 1px border) */
+    left: 19px;
     top: 0;
     bottom: 0;
     width: 2px;
@@ -516,8 +475,8 @@ textarea:focus {
 
 .timeline-item {
     position: relative;
-    margin-bottom: var(--space-xl); /* Space between timeline items */
-    padding-left: var(--space-xxl); /* Space for the marker and line */
+    margin-bottom: var(--space-xl);
+    padding-left: var(--space-xxl);
 }
 
 .timeline-item:last-child {
@@ -527,19 +486,18 @@ textarea:focus {
 .timeline-marker {
     position: absolute;
     left: 0;
-    top: 0; /* Align with the top of the card title or content */
-    width: 40px; /* Increased size for better visual */
+    top: 0;
+    width: 40px;
     height: 40px;
-    background-color: var(--color-bg); /* Background to sit on top of the line */
+    background-color: var(--color-bg);
     border: 2px solid var(--color-accent);
     border-radius: 50%;
-    z-index: 1; /* Make sure marker is above the timeline line */
+    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Optional: Inner dot for the marker */
 .timeline-marker::after {
     content: '';
     width: 16px;
@@ -550,25 +508,25 @@ textarea:focus {
 }
 
 .timeline-card {
-    background-color: var(--color-bg); /* Or #FFFFFF for a slightly whiter card */
+    background-color: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: 8px;
     padding: var(--space-lg);
-    position: relative; /* For potential ::before arrow or styling */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.03); /* Very subtle shadow */
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
 }
 
 .timeline-summary {
-    cursor: pointer; /* Indicate it's clickable */
-    padding-bottom: var(--space-sm); /* Add some padding if details are directly below */
+    cursor: pointer;
+    padding-bottom: var(--space-sm);
 }
 
 .timeline-summary:hover .timeline-title {
-    color: var(--color-accent); /* Title changes color on hover of summary */
+    color: var(--color-accent);
 }
 
-.timeline-title { /* h3 inside summary */
-    font-size: 1.5rem; /* Consistent with project card title */
+.timeline-title {
+    font-size: 1.5rem;
     font-weight: 500;
     color: var(--color-text-primary);
     margin-bottom: var(--space-xs);
@@ -577,75 +535,39 @@ textarea:focus {
 
 .timeline-company {
     font-size: 1.1rem;
-    font-weight: 500; /* Make company name slightly more prominent */
-    color: var(--color-text-primary); /* Or a slightly lighter primary */
+    font-weight: 500;
+    color: var(--color-text-primary);
     margin-bottom: var(--space-xs);
 }
 
 .timeline-dates {
     font-size: 0.9rem;
     color: var(--color-text-secondary);
-    margin-bottom: 0; /* No margin if it's the last item in summary */
+    margin-bottom: 0;
 }
 
 .timeline-details {
-    display: none; /* Hidden by default */
-    padding-top: var(--space-md);
-    margin-top: var(--space-md);
-    border-top: 1px solid var(--color-border); /* Separator line */
-}
-
-.timeline-details ul {
-    list-style-position: outside;
-    padding-left: var(--space-lg); /* Indent list */
-    margin-bottom: var(--space-md);
-}
-
-.timeline-details ul li {
-    margin-bottom: var(--space-sm);
-    line-height: 1.6;
-}
-
-.timeline-tech {
-    font-size: 0.9rem;
-    color: var(--color-text-secondary);
-}
-
-.timeline-tech strong {
-    color: var(--color-text-primary); /* Make "Key Technologies:" label slightly more prominent */
-}
-
-/* Styling for the details section when it's visible */
-.timeline-details.details-visible {
-    display: block; /* Change from display: none */
-    opacity: 1;
-    max-height: 1000px; /* Large enough value to accommodate content */
-    /* overflow: hidden; */ /* Might be needed depending on content and animation */
-    transition: max-height 0.7s ease-in-out, opacity 0.5s ease-in-out 0.1s; /* Delay opacity for smoother feel */
-    border-top: 1px solid var(--color-border); /* Separator line - visible only when expanded */
-    padding-top: var(--space-md); /* Add padding when visible */
-    margin-top: var(--space-md); /* Add margin when visible */
-}
-
-/* Initial state for transition (already hidden by display:none, but this helps with animation) */
-.timeline-details {
-    /* display: none; */ /* JS toggles .details-visible which has display:block */
     opacity: 0;
     max-height: 0;
-    overflow: hidden; /* Important for max-height transition */
-    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), opacity 0.3s ease-out; /* Exit transition */
-    /* padding-top and margin-top removed from here if they should only apply when visible */
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), opacity 0.3s ease-out;
 }
 
-/* Styling for when the summary is active (details are shown) */
+.timeline-details.details-visible {
+    display: block;
+    opacity: 1;
+    max-height: 1000px;
+    transition: max-height 0.7s ease-in-out, opacity 0.5s ease-in-out 0.1s;
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-md);
+    margin-top: var(--space-md);
+}
+
 .timeline-summary.summary-active {
-    /* Example: Change background or add a border if desired */
-    /* background-color: #f0f0f0; */ /* Lighten the card slightly */
 }
 
-/* Optional: Add an indicator icon (e.g., arrow) to the summary */
 .timeline-summary::after {
-    content: '▼'; /* Down arrow, indicates expandable */
+    content: '▼';
     float: right;
     margin-left: var(--space-sm);
     font-size: 0.8em;
@@ -654,59 +576,376 @@ textarea:focus {
 }
 
 .timeline-summary.summary-active::after {
-    transform: rotate(180deg); /* Up arrow, indicates collapsible */
+    transform: rotate(180deg);
 }
 
-/* Ensure good spacing and readability in the expanded details */
 .timeline-details ul {
-    list-style-type: disc; /* Or other preferred bullet */
-    margin-top: var(--space-sm); /* Space above list if it's first element */
+    list-style-type: disc;
+    margin-top: var(--space-sm);
 }
 
 .timeline-details ul li {
-    margin-bottom: var(--space-xs); /* Tighter spacing for list items */
-    line-height: 1.5; /* Slightly tighter line height for bullets */
+    margin-bottom: var(--space-xs);
+    line-height: 1.5;
 }
 
-.timeline-tech { /* This rule already exists, ensuring margin-top is appropriate */
-    margin-top: var(--space-md); /* Space above tech list */
-    /* font-size: 0.9rem; */ /* Already defined */
+.timeline-tech {
+    margin-top: var(--space-md);
 }
 
-/* Styling for Skills Emphasized in Timeline */
+.timeline-tech strong {
+    color: var(--color-text-primary);
+}
+
 .timeline-skills-emphasized {
-    margin-top: var(--space-sm); /* Space above this section */
+    margin-top: var(--space-sm);
     padding-top: var(--space-sm);
-    border-top: 1px dashed var(--color-border); /* Subtle separator if needed */
+    border-top: 1px dashed var(--color-border);
     font-size: 0.9rem;
 }
 
 .timeline-skills-emphasized p {
-    margin-bottom: 0; /* Remove bottom margin from paragraph if it's the only element */
+    margin-bottom: 0;
     color: var(--color-text-secondary);
 }
 
-.timeline-skills-emphasized strong { /* "Skills Emphasized:" label */
-    color: var(--color-text-primary); /* Make label slightly more prominent */
+.timeline-skills-emphasized strong {
+    color: var(--color-text-primary);
     font-weight: 500;
 }
 
-.timeline-skills-emphasized span { /* The actual skills list */
-    /* No specific styling needed unless want to make them like tags */
-    /* For example, to make them look like small tags:
-    display: inline-block;
-    background-color: var(--color-page-background-color); // or a light accent
-    border: 1px solid var(--color-border);
-    padding: var(--space-xxs) var(--space-xs);
-    border-radius: 3px;
-    margin-right: var(--space-xs);
-    margin-bottom: var(--space-xs);
-    font-size: 0.85rem;
-    */
+.timeline-skills-emphasized span {
+}
+*/
+
+/* Horizontal Experience Timeline Styles */
+#experience-content h2 { /* "My Experience" title - already centered */
+    /* margin-bottom: var(--space-xl); /* Ensure this is still appropriate */
 }
 
-/* Styling for Project Listing Page - projects.html */
+.horizontal-timeline-wrapper {
+    overflow-x: auto; /* Enable horizontal scrolling on smaller screens */
+    padding: var(--space-lg) 0; /* Padding above/below the timeline */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: var(--color-accent) var(--color-border); /* Firefox */
+}
 
+/* Webkit scrollbar styling */
+.horizontal-timeline-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+.horizontal-timeline-wrapper::-webkit-scrollbar-track {
+    background: var(--color-border);
+    border-radius: 4px;
+}
+.horizontal-timeline-wrapper::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: 4px;
+}
+.horizontal-timeline-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #A06B51; /* Darker accent */
+}
+
+
+.horizontal-timeline {
+    display: flex;
+    position: relative;
+    min-width: fit-content;
+    /* Add horizontal padding to the timeline itself, instead of just events */
+    padding: var(--space-xl) var(--space-md) var(--space-xxl) var(--space-md);
+}
+
+/* The main horizontal timeline axis line */
+.horizontal-timeline::before {
+    content: '';
+    position: absolute;
+    top: calc(var(--space-md) + 10px - 1px); /* marker margin-top + marker height/2 - line height/2 */
+    left: 0; /* Span full width of the padded .horizontal-timeline */
+    right: 0;
+    height: 2px;
+    background-color: var(--color-border);
+    z-index: 0;
+}
+
+.timeline-event { /* Re-using .timeline-event for horizontal items */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* padding: 0 var(--space-lg); */ /* Original per-event padding */
+    /* New approach: Add margin to events for spacing, container handles edge padding */
+    margin: 0 var(--space-md); /* Space between events */
+    min-width: 280px;
+    max-width: 320px;
+    flex-shrink: 0;
+    /* ... rest of .timeline-event styles ... */
+}
+
+.timeline-event:first-child {
+    /* padding-left: var(--space-md); */
+    margin-left: 0; /* No extra margin if .horizontal-timeline has padding */
+}
+.timeline-event:last-child {
+    /* padding-right: var(--space-md); */
+    margin-right: 0; /* No extra margin if .horizontal-timeline has padding */
+}
+
+.event-marker { /* Re-style/rename from .timeline-marker if desired, or adapt */
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-accent);
+    border: 3px solid var(--color-bg);
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    margin-top: var(--space-md); /* Pulls marker up onto the line */
+}
+
+.event-date-horizontal {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-sm); /* Space between date and marker */
+    text-align: center;
+    white-space: nowrap;
+    position: absolute;
+    top: 0; /* Position above the marker */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.event-card { /* Re-style/rename from .timeline-card */
+    background-color: var(--color-bg); /* Or #FFFFFF */
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: var(--space-md);
+    margin-top: var(--space-md); /* Space between marker and card */
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    min-height: 150px; /* Give cards a min height */
+}
+
+.event-summary { /* Re-style/rename from .timeline-summary */
+    cursor: pointer;
+    flex-grow: 1; /* Allow summary to take available space */
+}
+
+.event-summary:hover .event-title {
+    color: var(--color-accent);
+}
+
+.event-title { /* h3, re-style/rename from .timeline-title */
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-xs);
+}
+
+.event-company { /* Re-style/rename from .timeline-company */
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-xxs);
+}
+
+.event-dates-summary {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-sm); /* Space before details or bottom of card */
+}
+
+.event-summary .arrow-indicator::after { /* For expand/collapse indicator */
+    content: '▼';
+    float: right;
+    font-size: 0.8em;
+    color: var(--color-accent);
+    transition: transform var(--transition-speed) var(--transition-timing);
+}
+.event-summary.summary-active .arrow-indicator::after {
+    transform: rotate(180deg);
+}
+
+
+.event-details { /* Re-style/rename from .timeline-details */
+    display: none;
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+}
+
+.event-details ul {
+    list-style-position: outside;
+    padding-left: var(--space-lg);
+    margin-bottom: var(--space-md);
+}
+.event-details ul li {
+    margin-bottom: var(--space-sm);
+    line-height: 1.6;
+}
+/* .timeline-skills-emphasized and .timeline-tech styles from vertical timeline are expected to apply
+   if class names are kept the same within .event-details, or new specific styles can be added. */
+
+/* Styling for the details section when it's visible */
+.event-details.details-visible {
+    display: block; /* Change from display: none (which is the base for .event-details) */
+    opacity: 1;
+    max-height: 1000px; /* Large enough value to accommodate content */
+    transition: max-height 0.7s ease-in-out, opacity 0.5s ease-in-out 0.1s; /* Entry transition */
+    /* border-top, padding-top, margin-top are already in .event-details base style for structure */
+}
+
+/* Initial state for .event-details (should already include display:none from Step 2) */
+.event-details {
+    /* display: none; -- This is the base state from previous step's CSS */
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden; /* Important for max-height transition */
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), opacity 0.3s ease-out; /* Exit transition */
+    /* Styles for border-top, padding-top, margin-top are part of its structure when visible, defined in .event-details base in previous step */
+    /* This rule primarily handles the hidden animated state. */
+}
+
+/* Styling for when the summary is active (details are shown) */
+.event-summary.summary-active {
+    /* background-color: #fdf5ef; */ /* Example: slightly different background for active summary */
+    /* No specific style change needed for summary itself unless desired */
+}
+
+/* Arrow indicator using ::after on the summary */
+.event-summary { /* Ensure this was added or is already present from previous step */
+    position: relative;
+    padding-right: var(--space-lg); /* Make space for an absolute positioned arrow */
+}
+
+.event-summary::after {
+    content: '▼';
+    position: absolute;
+    right: var(--space-md);
+    top: var(--space-md); /* Adjust to align with first line of text better if needed */
+    font-size: 0.8em;
+    color: var(--color-accent);
+    transition: transform var(--transition-speed) var(--transition-timing);
+}
+
+.event-summary.summary-active::after {
+    transform: rotate(180deg); /* Rotates '▼' to '▲' */
+}
+
+/* Readability in Expanded Details - Re-affirm and ensure they use existing classes correctly */
+.event-details .timeline-skills-emphasized {
+    margin-top: var(--space-sm);
+    padding-top: var(--space-sm);
+    border-top: 1px dashed var(--color-border);
+    font-size: 0.9rem;
+}
+.event-details .timeline-skills-emphasized p {
+    margin-bottom: 0;
+    color: var(--color-text-secondary);
+}
+.event-details .timeline-skills-emphasized strong {
+    color: var(--color-text-primary);
+    font-weight: 500;
+}
+
+.event-details .timeline-tech {
+    margin-top: var(--space-md);
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+.event-details .timeline-tech strong {
+    color: var(--color-text-primary);
+    font-weight: 500; /* Ensure this is applied if not default for strong */
+}
+
+
+/* Styling for Project Listing Page - projects.html */
+/* NOTE: This block was duplicated. Commenting out this first instance.
+   The second instance (after Experience Timeline styles) is the one being kept and was last modified. */
+/*
+#projects-content .project-entry {
+    background-color: var(--color-bg); /* Or a slightly whiter like #FFFFFF if --color-bg is very creamy */
+    /*border: 1px solid var(--color-border);
+    border-radius: 8px; /* Soften edges, consistent with image styling goal */
+    /*padding: var(--space-xl);
+    margin-bottom: var(--space-xxl); /* Space between project entries */
+    /*box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+/*}
+
+.project-section {
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-border); /* Divider between sections within a project */
+/*}
+
+.project-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.project-section h4 { /* Titles for sections like "Executive Summary" */
+    /*font-size: 1.5rem; /* h3 size from spec */
+    /*font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--color-accent);
+    display: inline-block; /* So border only spans text */
+/*}
+
+.project-name { /* Main project title */
+    /*font-size: 2rem; /* h2 size from spec */
+    /*font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-md);
+}
+
+.project-meta {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-xs);
+}
+
+.project-meta .meta-label,
+.project-section .sub-label { /* For labels like "My Role:", "Client:", "The Core Challenge:" */
+    /*font-weight: 500;
+    color: var(--color-text-primary); /* Or a slightly less prominent color than main headings */
+/*}
+
+.project-section p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.project-key-metrics ul {
+    list-style: none; /* Remove default bullets */
+    /*padding-left: 0;
+}
+
+.project-key-metrics ul li {
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-sm);
+    padding-left: var(--space-md); /* Indent for custom bullet or visual */
+    /*position: relative;
+}
+
+.project-key-metrics ul li::before {
+    content: "•"; /* Simple bullet, can be changed */
+    /*color: var(--color-accent);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+*/
+
+/* Styling for Project Listing Page - projects.html */
+/* This is the CORRECT block for project listing cards */
 #projects-content h2 { /* "My Projects" title */
     text-align: center;
     margin-bottom: var(--space-xl);
@@ -826,86 +1065,23 @@ textarea:focus {
     padding-bottom: var(--space-xl);
 }
 
-/* Styling for Projects Page - projects.html */
-#projects-content .project-entry {
-    background-color: var(--color-bg); /* Or a slightly whiter like #FFFFFF if --color-bg is very creamy */
-    border: 1px solid var(--color-border);
-    border-radius: 8px; /* Soften edges, consistent with image styling goal */
-    padding: var(--space-xl);
-    margin-bottom: var(--space-xxl); /* Space between project entries */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow for depth */
-}
-
-.project-section {
-    margin-bottom: var(--space-lg);
-    padding-bottom: var(--space-lg);
-    border-bottom: 1px solid var(--color-border); /* Divider between sections within a project */
-}
-
-.project-section:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-}
-
-.project-section h4 { /* Titles for sections like "Executive Summary" */
-    font-size: 1.5rem; /* h3 size from spec */
-    font-weight: 500;
-    color: var(--color-text-primary);
-    margin-bottom: var(--space-md);
-    padding-bottom: var(--space-sm);
-    border-bottom: 2px solid var(--color-accent);
-    display: inline-block; /* So border only spans text */
-}
-
-.project-name { /* Main project title */
-    font-size: 2rem; /* h2 size from spec */
-    font-weight: 500;
-    color: var(--color-text-primary);
-    margin-bottom: var(--space-md);
-}
-
-.project-meta {
-    font-size: 1rem;
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-xs);
-}
-
-.project-meta .meta-label,
-.project-section .sub-label { /* For labels like "My Role:", "Client:", "The Core Challenge:" */
-    font-weight: 500;
-    color: var(--color-text-primary); /* Or a slightly less prominent color than main headings */
-}
-
-.project-section p {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--color-text-primary);
-    margin-bottom: var(--space-sm);
-}
-
-.project-key-metrics ul {
-    list-style: none; /* Remove default bullets */
-    padding-left: 0;
-}
-
-.project-key-metrics ul li {
-    font-size: 1rem;
-    color: var(--color-text-primary);
-    margin-bottom: var(--space-sm);
-    padding-left: var(--space-md); /* Indent for custom bullet or visual */
-    position: relative;
-}
-
-.project-key-metrics ul li::before {
-    content: "•"; /* Simple bullet, can be changed */
-    color: var(--color-accent);
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-}
-
 /* Responsive Styles (Mobile-First Approach if building from scratch, or adjustments here) */
+/* The following @media block for project entry specific responsive adjustments will be merged
+   with the existing @media blocks if possible, or kept separate if structure dictates.
+   For now, adding it here, then will consolidate in a future step if needed. */
+/*
+@media (max-width: 768px) {
+    .project-name { /* This will be merged with existing @media (max-width: 768px) */
+        /*font-size: 1.75rem;
+    }
+    .project-section h4 { /* This will be merged */
+        /*font-size: 1.3rem;
+    }
+    #projects-content .project-entry { /* This is new */
+        /*padding: var(--space-lg);
+    }
+}
+*/
 @media (max-width: 992px) { /* Tablet and larger mobile */
     .container {
         width: 90%; /* More space on smaller screens */
@@ -921,6 +1097,18 @@ textarea:focus {
     }
     .education-item h3 {
         font-size: 1.3rem;
+    }
+    /* Horizontal Timeline adjustments for tablets */
+    .timeline-event {
+        min-width: 260px; /* Slightly smaller cards on tablets */
+        max-width: 300px;
+        /* margin: 0 var(--space-sm); */ /* Slightly reduce space between events - already var(--space-md) */
+    }
+    .event-title { /* Horizontal timeline card title */
+        font-size: 1.1rem;
+    }
+    .event-company { /* Horizontal timeline card company */
+        font-size: 0.95rem;
     }
 }
 
@@ -946,36 +1134,54 @@ textarea:focus {
     .project-summary-card .card-title { /* Card titles on listing page */
         font-size: 1.3rem;
     }
-    /* Experience Timeline responsive adjustments */
+    /* OLD Vertical Experience Timeline responsive adjustments (can be removed if selectors are gone) */
     .experience-timeline::before {
-        left: 9px; /* Adjust line position for smaller marker if any */
+        left: 9px;
     }
     .timeline-item {
-        padding-left: var(--space-xl); /* Reduce padding for smaller marker */
+        padding-left: var(--space-xl);
     }
     .timeline-marker {
         width: 20px;
         height: 20px;
-        /* Adjust left position if needed, but padding-left on item handles overall shift */
     }
-    .timeline-marker::after { /* Smaller inner dot for smaller marker */
+    .timeline-marker::after {
         width: 8px;
         height: 8px;
     }
     .timeline-card {
-        padding: var(--space-md); /* Slightly reduce card padding */
+        padding: var(--space-md);
     }
     .timeline-details ul {
-        padding-left: var(--space-md); /* Reduce list indentation slightly */
+        padding-left: var(--space-md);
     }
-    .timeline-title {
+    .timeline-title { /* This was for OLD vertical timeline card title */
         font-size: 1.3rem;
     }
-    .timeline-company {
+    .timeline-company { /* This was for OLD vertical timeline card company */
         font-size: 1rem;
     }
     .timeline-skills-emphasized, .timeline-tech {
-        font-size: 0.85rem; /* Slightly smaller text for these meta sections */
+        font-size: 0.85rem;
+    }
+    /* Horizontal Timeline adjustments for mobile */
+    .horizontal-timeline {
+        padding-left: var(--space-xs);
+        padding-right: var(--space-xs);
+    }
+    .timeline-event { /* Horizontal timeline event */
+        min-width: 240px;
+        max-width: 280px;
+        margin: 0 var(--space-sm);
+    }
+    .event-title { /* Horizontal timeline card title */
+        font-size: 1rem;
+    }
+    .event-card { /* Horizontal timeline card */
+        padding: var(--space-sm);
+    }
+    .event-date-horizontal { /* Horizontal timeline date */
+        font-size: 0.8rem;
     }
     #hero h2 {
         font-size: 2.5rem;
@@ -985,23 +1191,23 @@ textarea:focus {
     }
     section h2 {
         font-size: 2rem;
-        margin-bottom: var(--space-lg); /* Adjust space for titles */
+        margin-bottom: var(--space-lg);
     }
     section {
-        padding: var(--space-xxl) 0; /* Adjust section padding */
+        padding: var(--space-xxl) 0;
     }
     nav ul {
-        gap: var(--space-md); /* Reduce gap for nav items */
+        gap: var(--space-md);
     }
     nav ul li a {
         font-size: 0.9rem;
     }
     .skills-list {
-        flex-direction: column; /* Stack skills on smaller screens */
-        align-items: center; /* Center tags when stacked */
+        flex-direction: column;
+        align-items: center;
     }
     .skills-list li {
-        width: 80%; /* Or some other suitable width */
+        width: 80%;
         text-align: center;
     }
 }
@@ -1011,12 +1217,12 @@ textarea:focus {
         font-size: 1.3rem;
     }
     header .container {
-        flex-direction: column; /* Stack header items */
+        flex-direction: column;
         gap: var(--space-md);
     }
     nav ul {
-        justify-content: center; /* Center nav items when stacked */
-        flex-wrap: wrap; /* Allow nav items to wrap if needed */
+        justify-content: center;
+        flex-wrap: wrap;
     }
     #hero h2 {
         font-size: 2rem;
@@ -1025,44 +1231,26 @@ textarea:focus {
         font-size: 1.8rem;
     }
     #about p, .job ul li, .education-item p { /* .job rules are for old structure, might be removed */
-        font-size: 1rem; /* Adjust paragraph font sizes */
+        font-size: 1rem;
     }
     .job h3 { /* For old structure, might be removed */
         font-size: 1.3rem;
     }
-    /* Experience Timeline responsive adjustments - continued from 768px, specific to 576px */
+    /* OLD Vertical Experience Timeline responsive adjustments (can be removed if selectors are gone) */
     .experience-timeline {
         padding: var(--space-md) 0;
     }
-    .experience-timeline::before { /* Ensure line is still aligned with smaller marker */
+    .experience-timeline::before {
         left: 9px;
     }
-     #experience-content h2 {
-        margin-bottom: var(--space-lg);
-    }
+     /* #experience-content h2 is general */
     .timeline-item {
-        padding-left: 30px; /* Space for 20px marker + a bit of gap */
+        padding-left: 30px;
     }
     .timeline-marker{
-        left: 0; /* Align to the new padding edge of timeline-item */
+        left: 0;
     }
-    .timeline-title { /* Further reduce font size for smallest screens */
-        font-size: 1.2rem;
-    }
-    .timeline-company {
-        font-size: 0.95rem;
-    }
-    .timeline-dates {
-        font-size: 0.8rem;
-    }
-    .timeline-details ul li {
-        font-size: 0.9rem;
-        line-height: 1.5;
-    }
-    .timeline-skills-emphasized, .timeline-tech { /* Further reduce for smallest screens */
-        font-size: 0.8rem;
-    }
-    .timeline-summary::after { /* Arrow indicator */
-        font-size: 0.7em; /* Make arrow slightly smaller */
-    }
+    /* .timeline-title, .timeline-company, .timeline-dates, etc. for OLD vertical timeline */
+    /* .timeline-details ul li, .timeline-skills-emphasized, .timeline-tech for OLD vertical timeline */
+    /* .timeline-summary::after for OLD vertical timeline */
 }
