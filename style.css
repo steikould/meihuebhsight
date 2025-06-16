@@ -490,6 +490,221 @@ textarea:focus {
     box-shadow: 0 0 3px var(--color-accent); /* Simpler focus shadow */
 }
 
+/* Experience Timeline Styles */
+#experience-content h2 { /* "My Experience" title */
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.experience-timeline {
+    position: relative;
+    max-width: 900px; /* Max width for the timeline itself */
+    margin: 0 auto;
+    padding: var(--space-lg) 0;
+}
+
+/* The actual timeline line */
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 19px; /* Position to align with the center of markers (40px width / 2 - 1px border) */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--color-border);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: var(--space-xl); /* Space between timeline items */
+    padding-left: var(--space-xxl); /* Space for the marker and line */
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 0;
+    top: 0; /* Align with the top of the card title or content */
+    width: 40px; /* Increased size for better visual */
+    height: 40px;
+    background-color: var(--color-bg); /* Background to sit on top of the line */
+    border: 2px solid var(--color-accent);
+    border-radius: 50%;
+    z-index: 1; /* Make sure marker is above the timeline line */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Optional: Inner dot for the marker */
+.timeline-marker::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    display: block;
+}
+
+.timeline-card {
+    background-color: var(--color-bg); /* Or #FFFFFF for a slightly whiter card */
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: var(--space-lg);
+    position: relative; /* For potential ::before arrow or styling */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03); /* Very subtle shadow */
+}
+
+.timeline-summary {
+    cursor: pointer; /* Indicate it's clickable */
+    padding-bottom: var(--space-sm); /* Add some padding if details are directly below */
+}
+
+.timeline-summary:hover .timeline-title {
+    color: var(--color-accent); /* Title changes color on hover of summary */
+}
+
+.timeline-title { /* h3 inside summary */
+    font-size: 1.5rem; /* Consistent with project card title */
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-xs);
+    transition: color var(--transition-speed) var(--transition-timing);
+}
+
+.timeline-company {
+    font-size: 1.1rem;
+    font-weight: 500; /* Make company name slightly more prominent */
+    color: var(--color-text-primary); /* Or a slightly lighter primary */
+    margin-bottom: var(--space-xs);
+}
+
+.timeline-dates {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0; /* No margin if it's the last item in summary */
+}
+
+.timeline-details {
+    display: none; /* Hidden by default */
+    padding-top: var(--space-md);
+    margin-top: var(--space-md);
+    border-top: 1px solid var(--color-border); /* Separator line */
+}
+
+.timeline-details ul {
+    list-style-position: outside;
+    padding-left: var(--space-lg); /* Indent list */
+    margin-bottom: var(--space-md);
+}
+
+.timeline-details ul li {
+    margin-bottom: var(--space-sm);
+    line-height: 1.6;
+}
+
+.timeline-tech {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.timeline-tech strong {
+    color: var(--color-text-primary); /* Make "Key Technologies:" label slightly more prominent */
+}
+
+/* Styling for the details section when it's visible */
+.timeline-details.details-visible {
+    display: block; /* Change from display: none */
+    opacity: 1;
+    max-height: 1000px; /* Large enough value to accommodate content */
+    /* overflow: hidden; */ /* Might be needed depending on content and animation */
+    transition: max-height 0.7s ease-in-out, opacity 0.5s ease-in-out 0.1s; /* Delay opacity for smoother feel */
+    border-top: 1px solid var(--color-border); /* Separator line - visible only when expanded */
+    padding-top: var(--space-md); /* Add padding when visible */
+    margin-top: var(--space-md); /* Add margin when visible */
+}
+
+/* Initial state for transition (already hidden by display:none, but this helps with animation) */
+.timeline-details {
+    /* display: none; */ /* JS toggles .details-visible which has display:block */
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden; /* Important for max-height transition */
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), opacity 0.3s ease-out; /* Exit transition */
+    /* padding-top and margin-top removed from here if they should only apply when visible */
+}
+
+/* Styling for when the summary is active (details are shown) */
+.timeline-summary.summary-active {
+    /* Example: Change background or add a border if desired */
+    /* background-color: #f0f0f0; */ /* Lighten the card slightly */
+}
+
+/* Optional: Add an indicator icon (e.g., arrow) to the summary */
+.timeline-summary::after {
+    content: '▼'; /* Down arrow, indicates expandable */
+    float: right;
+    margin-left: var(--space-sm);
+    font-size: 0.8em;
+    color: var(--color-accent);
+    transition: transform var(--transition-speed) var(--transition-timing);
+}
+
+.timeline-summary.summary-active::after {
+    transform: rotate(180deg); /* Up arrow, indicates collapsible */
+}
+
+/* Ensure good spacing and readability in the expanded details */
+.timeline-details ul {
+    list-style-type: disc; /* Or other preferred bullet */
+    margin-top: var(--space-sm); /* Space above list if it's first element */
+}
+
+.timeline-details ul li {
+    margin-bottom: var(--space-xs); /* Tighter spacing for list items */
+    line-height: 1.5; /* Slightly tighter line height for bullets */
+}
+
+.timeline-tech { /* This rule already exists, ensuring margin-top is appropriate */
+    margin-top: var(--space-md); /* Space above tech list */
+    /* font-size: 0.9rem; */ /* Already defined */
+}
+
+/* Styling for Skills Emphasized in Timeline */
+.timeline-skills-emphasized {
+    margin-top: var(--space-sm); /* Space above this section */
+    padding-top: var(--space-sm);
+    border-top: 1px dashed var(--color-border); /* Subtle separator if needed */
+    font-size: 0.9rem;
+}
+
+.timeline-skills-emphasized p {
+    margin-bottom: 0; /* Remove bottom margin from paragraph if it's the only element */
+    color: var(--color-text-secondary);
+}
+
+.timeline-skills-emphasized strong { /* "Skills Emphasized:" label */
+    color: var(--color-text-primary); /* Make label slightly more prominent */
+    font-weight: 500;
+}
+
+.timeline-skills-emphasized span { /* The actual skills list */
+    /* No specific styling needed unless want to make them like tags */
+    /* For example, to make them look like small tags:
+    display: inline-block;
+    background-color: var(--color-page-background-color); // or a light accent
+    border: 1px solid var(--color-border);
+    padding: var(--space-xxs) var(--space-xs);
+    border-radius: 3px;
+    margin-right: var(--space-xs);
+    margin-bottom: var(--space-xs);
+    font-size: 0.85rem;
+    */
+}
+
 /* Styling for Project Listing Page - projects.html */
 
 #projects-content h2 { /* "My Projects" title */
@@ -731,6 +946,37 @@ textarea:focus {
     .project-summary-card .card-title { /* Card titles on listing page */
         font-size: 1.3rem;
     }
+    /* Experience Timeline responsive adjustments */
+    .experience-timeline::before {
+        left: 9px; /* Adjust line position for smaller marker if any */
+    }
+    .timeline-item {
+        padding-left: var(--space-xl); /* Reduce padding for smaller marker */
+    }
+    .timeline-marker {
+        width: 20px;
+        height: 20px;
+        /* Adjust left position if needed, but padding-left on item handles overall shift */
+    }
+    .timeline-marker::after { /* Smaller inner dot for smaller marker */
+        width: 8px;
+        height: 8px;
+    }
+    .timeline-card {
+        padding: var(--space-md); /* Slightly reduce card padding */
+    }
+    .timeline-details ul {
+        padding-left: var(--space-md); /* Reduce list indentation slightly */
+    }
+    .timeline-title {
+        font-size: 1.3rem;
+    }
+    .timeline-company {
+        font-size: 1rem;
+    }
+    .timeline-skills-emphasized, .timeline-tech {
+        font-size: 0.85rem; /* Slightly smaller text for these meta sections */
+    }
     #hero h2 {
         font-size: 2.5rem;
     }
@@ -778,10 +1024,45 @@ textarea:focus {
     section h2 {
         font-size: 1.8rem;
     }
-    #about p, .job ul li, .education-item p {
+    #about p, .job ul li, .education-item p { /* .job rules are for old structure, might be removed */
         font-size: 1rem; /* Adjust paragraph font sizes */
     }
-    .job h3 {
+    .job h3 { /* For old structure, might be removed */
         font-size: 1.3rem;
+    }
+    /* Experience Timeline responsive adjustments - continued from 768px, specific to 576px */
+    .experience-timeline {
+        padding: var(--space-md) 0;
+    }
+    .experience-timeline::before { /* Ensure line is still aligned with smaller marker */
+        left: 9px;
+    }
+     #experience-content h2 {
+        margin-bottom: var(--space-lg);
+    }
+    .timeline-item {
+        padding-left: 30px; /* Space for 20px marker + a bit of gap */
+    }
+    .timeline-marker{
+        left: 0; /* Align to the new padding edge of timeline-item */
+    }
+    .timeline-title { /* Further reduce font size for smallest screens */
+        font-size: 1.2rem;
+    }
+    .timeline-company {
+        font-size: 0.95rem;
+    }
+    .timeline-dates {
+        font-size: 0.8rem;
+    }
+    .timeline-details ul li {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    .timeline-skills-emphasized, .timeline-tech { /* Further reduce for smallest screens */
+        font-size: 0.8rem;
+    }
+    .timeline-summary::after { /* Arrow indicator */
+        font-size: 0.7em; /* Make arrow slightly smaller */
     }
 }
